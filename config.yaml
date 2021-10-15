@@ -1,0 +1,24 @@
+mqtt:
+  host: 192.168.0.181
+  port: 1883
+  user: mqtt
+  password: xxxx
+  topic_prefix: frigate
+  client_id: frigate
+cameras:
+  nursery:
+    ffmpeg:
+      inputs:
+        - path: rtsp://192.168.0.1:744...
+          roles:
+            - detect
+            - rtmp
+    width: 1920
+    height: 1080
+    fps: 5
+detectors:
+  coral:
+    type: edgetpu
+    device: pci
+logger:
+  default: debug
